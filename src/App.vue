@@ -1,10 +1,18 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <button @click="loginToTwitter">Log into Twitter</button>
 </template>
+
+<script lang="ts">
+import axios from 'axios';
+
+export default {
+  methods: {
+    loginToTwitter() {
+      axios.get('http:localhost:3000/login/twitter');
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
